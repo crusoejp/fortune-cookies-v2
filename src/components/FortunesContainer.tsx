@@ -1,5 +1,5 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Fortune from "./Fortunes";
 import { Fortune as FortuneType } from "./utils";
 import AddFortuneModal from "./AddFortuneModal";
@@ -18,7 +18,12 @@ const FortunesContainer = () => {
     );
   };
 
-  getFortunes();
+  useEffect(() => {
+    if (fortunes.length === 0) {
+      getFortunes();
+    }
+  }, [fortunes]);
+
   return (
     <Box w="80%" m="0 auto" pt="20px" pb="50px" minH="100vh">
       <Text fontSize="36px" mb="20px">

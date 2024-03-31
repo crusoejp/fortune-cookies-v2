@@ -7,12 +7,10 @@ import {
   ModalBody,
   ModalCloseButton,
   ModalContent,
-  ModalHeader,
   ModalOverlay,
   Text,
 } from "@chakra-ui/react";
 import { Fortune } from "./utils";
-import { get } from "http";
 import { useState } from "react";
 
 interface ModalProps {
@@ -77,8 +75,8 @@ const FortuneModal = ({ fortune, open, setOpen, getFortunes }: ModalProps) => {
             {!editing ? (
               <Box>
                 <Text>{fortune.fortune}</Text>
-                <Text>{fortune.lucky_numbers}</Text>
-                <Text>{fortune.learn_chinese}</Text>
+                <Text>Lucky Numbers: {fortune.lucky_numbers}</Text>
+                <Text>Learn Chinese: {fortune.learn_chinese}</Text>
               </Box>
             ) : (
               <Flex flexDir="column" gap="10px">

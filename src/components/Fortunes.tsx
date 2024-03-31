@@ -15,7 +15,7 @@ const Fortune = ({ fortune, getFortunes }: Props) => {
       color="red"
       boxShadow="md"
       width="250px"
-      height="45px"
+      minH="45px"
       cursor="pointer"
       onClick={() => setOpen(true)}
       p="10px"
